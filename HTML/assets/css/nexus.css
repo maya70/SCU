@@ -46,7 +46,7 @@ body {
   background-size: cover !important;
   position: relative;
   background-color: #ccc3d4;
-  background: url(../img/bg.jpg) 50% 0% no-repeat fixed;
+  background: url(../img/b10.jpg) 50% 0% no-repeat fixed;
 }
 .primary-container-background .primary-container {
   background-color: #f0eef3;
@@ -57,7 +57,7 @@ body {
   -webkit-box-shadow: 0 0px 40px rgba(0, 0, 0, 0.35);
   box-shadow: 0 0px 40px rgba(0, 0, 0, 0.35);
   border-radius: 8px;
-  width: 1080px;
+  width: 80%;
 }
 .primary-container-background {
   height: 100%;
@@ -72,7 +72,7 @@ body {
   position: relative;
 }
 .container {
-  max-width: 1080px;
+  max-width: 80%;
   padding-left: 30px;
   padding-right: 30px;
   width: 100%;
@@ -118,7 +118,7 @@ body {
 }
 p.site-slogan {
   color: #b1a5bd;
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 8px;
   margin: 0;
   padding: 0;
@@ -615,7 +615,7 @@ h1.logo-text a {
   background-color: #473d4f;
   color: #dcd7e0;
   display: block;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 1px;
   line-height: 1.4em;
   padding: 8px 18px;
@@ -1572,13 +1572,14 @@ i.fa.center {
   border: none;
   padding: 18px 30px;
   color: #FFFFFF;
-  font-size: 12px;
+  font-size: 22px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   outline: none;
 }
 .tabs-dark .tab-content {
   padding: 25px;
+  height: 300px;
   color: rgba(255, 255, 255, 0.7);
 }
 .tabs-dark .tab-content h3 {
@@ -1616,7 +1617,7 @@ i.fa.center {
 }
 .tabs .nav-tabs li a {
   border-radius: 5px 5px 0 0;
-  font-size: 14px;
+  font-size: 18px;
   margin-right: 1px;
 }
 .tabs .nav-tabs li:last-child a {
@@ -2198,6 +2199,9 @@ ul.social-icons li a:hover {
   top: auto;
   bottom: -35px;
   margin-right: -19px;
+}
+.carousel-inner{
+  width: 100%;
 }
 .carousel.alternative .carousel-indicators li {
   background: #d1d1d1;
