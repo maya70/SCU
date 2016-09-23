@@ -108,6 +108,8 @@ body {
 /* Logo */
 .logo {
   position: absolute;
+  padding: 0 0 0px 0;
+
 }
 .logo a {
   left: 15px;
