@@ -1,0 +1,497 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+         // ======================================== Sunday Schedule ==================================================
+        var bsun = document.getElementById('sun');
+         bsun.onclick = function(){
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+         this.style.background = '#9e379f'; 
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'الاعمال الالكترونيه', createCustomHTMLContent(32, 8, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '2', 'الاعمال الالكترونيه', createCustomHTMLContent(32, 8, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '3', 'الاعمال الالكترونيه', createCustomHTMLContent(32, 8, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            
+            [ '1', 'قواعد البيانات الشيئية', createCustomHTMLContent(37, 10, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '2', 'نظم دعم اتخاذ القرار', createCustomHTMLContent(38, 11, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '3', 'الاعمال الالكترونية', createCustomHTMLContent(19, 12, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            
+            [ '1', 'ادارة شبكات الحاسب', createCustomHTMLContent(33, 8, '1:00', '4:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '2', 'ادارة شبكات الحاسب', createCustomHTMLContent(33, 8, '1:00', '4:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '3', 'ادارة شبكات الحاسب', createCustomHTMLContent(33, 8, '1:00', '4:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 16, 00 ) ],
+
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+        // ======================================== Monday Schedule ==================================================
+        var bmon = document.getElementById('mon');
+         bmon.onclick = function(){
+        var ds= document.getElementsByTagName('div');
+        for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+         this.style.background = '  #9e379f'; 
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'نظم استرجاع المعلومات', createCustomHTMLContent(39, 4, '8:30', '10:00' ) , new Date(2016, 3, 30, 8, 30), new Date(2016, 3, 30, 10, 0 ) ],
+            [ '2', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(40, 5, '8:30', '10:00'  ) , new Date(2016, 3, 30, 8, 30), new Date(2016, 3, 30, 10, 0 ) ],
+            [ '3', 'ادارة شبكات الحاسب', createCustomHTMLContent(41, 6, '8:30', '10:00'  ) , new Date(2016, 3, 30, 8, 30), new Date(2016, 3, 30, 10, 0 ) ],
+            
+
+            [ '1', 'قواعد البيانات الشيئية', createCustomHTMLContent(33, 8, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '2', 'قواعد البيانات الشيئية', createCustomHTMLContent(33, 8, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '3', 'قواعد البيانات الشيئية', createCustomHTMLContent(33, 8, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            
+			[ '1', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '2', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '3', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+           			
+            [ '1', 'نظم استرجاع المعلومات', createCustomHTMLContent(34, 1, '2:00', '5:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '2', 'نظم استرجاع المعلومات', createCustomHTMLContent(34, 1, '2:00', '5:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '3', 'نظم استرجاع المعلومات', createCustomHTMLContent(34, 1, '2:00', '5:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+         
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+         // ======================================== Tuesday Schedule ==================================================
+
+      var btue = document.getElementById('tue');
+         btue.onclick = function(){
+
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+          this.style.background = '#9e379f'; 
+        
+      
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'ادارة شبكات الحاسب', createCustomHTMLContent(41, 10, '9:00', '10:30') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '2', 'نظم استرجاع المعلومات', createCustomHTMLContent(39, 11, '9:00', '10:30') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '3', 'نظم دعم اتخاذ القرار', createCustomHTMLContent(38, 12, '9:00', '11:00') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+           
+            [ '1', 'الاعمال الالكترونية', createCustomHTMLContent(39, 11, '10:30', '12:30') , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '2', 'الاعمال الالكترونية', createCustomHTMLContent(19, 10, '10:30', '12:30') , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '3', 'قواعد البيانات الشيئية', createCustomHTMLContent(37, 12, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            
+            [ '1', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(35, 8, '1:00', '4:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '2', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(35, 8, '1:00', '4:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '3', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(35, 8, '1:00', '4:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+
+         // ======================================== Wednesday Schedule ==================================================
+         var bwed = document.getElementById('wed');
+         bwed.onclick = function(){
+
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+          this.style.background = '#9e379f'; 
+        
+      
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'نظم دعم اتخاذ القرار', createCustomHTMLContent(38, 8, '8:30', '10:30' ) , new Date(2016, 3, 30, 8, 30), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '2', 'قواعد البيانات الشيئية', createCustomHTMLContent(37, 8, '8:30', '10:30' ) , new Date(2016, 3, 30, 8, 30), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '3', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(40, 8, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+          
+			[ '1', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(40, 8, '10:30', '12:00' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '2', 'ادارة شبكات الحاسب', createCustomHTMLContent(41, 8, '10:30', '12:00' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '3', 'نظم استرجاع المعلومات', createCustomHTMLContent(39, 8, '10:30', '12:00'  ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 00 ) ],
+		  
+            [ '1', 'نظم دعم اتخاذ القرار', createCustomHTMLContent(36, 8, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '2', 'نظم دعم اتخاذ القرار', createCustomHTMLContent(36, 8, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '3', 'نظم دعم اتخاذ القرار', createCustomHTMLContent(36, 8, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+
+
+          // ======================================== Thursday Schedule ==================================================
+          var bthu = document.getElementById('thu');
+         bthu.onclick = function(){
+
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+          this.style.background = '#9e379f'; 
+        
+      
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'ادارة شبكات الحاسب', createCustomHTMLContent(41, 12, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '2', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(40, 10, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+			[ '3', 'نظم استرجاع المعلومات', createCustomHTMLContent(39, 11, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+
+            [ '1', 'نظم استرجاع المعلومات', createCustomHTMLContent(39, 11, '10:30', '12:00' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 0 ) ],
+            [ '2', 'ادارة شبكات الحاسب', createCustomHTMLContent(41, 12, '10:30', '12:00' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 0 ) ],
+            [ '3', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(40, 10, '10:30', '12:00' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 0 ) ],
+
+            [ '1', 'تمثيل المعرفة والاستدلال', createCustomHTMLContent(40, 10, '12:00', '1:30' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 13, 30 ) ],
+            [ '2', 'نظم استرجاع المعلومات', createCustomHTMLContent(39, 11, '12:00', '1:30' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 13, 30 ) ],
+            [ '3', 'ادارة شبكات الحاسب', createCustomHTMLContent(41, 12, '12:00', '1:30' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 13, 30 ) ],
+  
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+
+      }
+      var profs = {
+                    0: {
+                      id: 0, 
+                      name: 'Dr. Mai Elshehaly',
+                      img: ''
+                      },
+                    1: {
+                      id: 1, 
+                      name: 'Dr. Mahmoud Elgayar',
+                      img: ''
+                      },
+                    2: {
+                      id: 2, 
+                      name: 'Dr. Sayed Abdel Raouf',
+                      img: ''
+                      },
+                    3: {
+                      id: 3, 
+                      name: 'Heba Arafat + Asmaa Mohamed',
+                      img: ''
+                      },
+                    4: {
+                      id: 4, 
+                      name: 'Heba Mostafa',
+                      img: ''
+                      },
+                    5: {
+                      id: 5, 
+                      name: 'Fatma Khairy', 
+                      img: ''
+                      },
+                    6: {
+                      id: 6, 
+                      name: 'Mohamed Gaber',
+                      img: ''
+                      },
+                    7: {
+                      id: 7, 
+                      name: 'Heba Arafat', 
+                      img: ''
+                      },
+                    8: {
+                      id: 8, 
+                      name: 'Dr. Hoda Hafez',
+                      img: ''
+                      },
+                    9: {
+                      id: 9, 
+                      name: 'Samia Mahmoud',
+                      img: ''
+                    }, 
+                    10: {
+                      id: 10, 
+                      name: 'Dr. Yasser Abdel Sattar',
+                      img: ''
+                    }, 
+                    11: {
+                      id: 11, 
+                      name: 'Osama Helmy',
+                      img: ''
+                    },
+                    12: {
+                      id: 12,
+                      name: 'Amira Sayed',
+                      img:'' 
+                    },
+                    13: {
+                      id: 13, 
+                      name: 'Dr. Abdel Raouf Abdel Rahman',
+                      img: ''
+                    },
+                    14: {
+                      id: 14, 
+                      name: 'Dr. Mohamed Abdel Naeem',
+                      img: ''
+                    },
+                    15: {
+                      id: 15,
+                      name: 'Dr. Mohamed Moselhy',
+                      img:''
+                    },
+                    16: {
+                      id: 16,
+                      name: 'Marwa Fekry',
+                      img: ''
+                      },
+                    17: {
+                      id: 17, 
+                      name: 'Doaa Abdel Shafy',
+                      img: ''
+                      },
+                    18: {
+                      id: 18,
+                      name: 'Gehad Taher',
+                      img: ''
+                      },
+                    19: {
+                      id: 19,
+                      name: 'Samiha',
+                      img:''
+                      },
+                    20: {
+                      id: 20, 
+                      name: 'Esraa Ismail',
+                      img: ''
+                      },
+                    21: {
+                      id: 21,
+                      name: 'Ahmed Galal',
+                      img:''
+                    },
+                    22: {
+                      id: 22,
+                      name: 'Mohamed Ismail',
+                      img:''
+                    },
+					23: {
+                      id: 23,
+                      name: 'Sara Abdel Wahab',
+                      img:''
+                    },
+					24: {
+                      id: 24,
+                      name: 'Amira Eleff',
+                      img:''
+                    },
+					25: {
+                      id: 25,
+                      name: 'Walaa Elashmawi',
+                      img:''
+                    },
+					26: {
+                      id: 26,
+                      name: 'Ahmed Hamed',
+                      img:''
+                    },
+					27: {
+                      id: 27,
+                      name: 'Dr. Tarek Gaber',
+                      img:''
+                    },
+					28: {
+                      id: 28,
+                      name: 'Dr. Mohamed Hamed',
+                      img:''
+                    },
+					29: {
+                      id: 29,
+                      name: 'Dr. Ahmed Sallam',
+                      img:''
+                    },
+					30: {
+                      id: 30,
+                      name: 'Dr. Gameil Sayed',
+                      img:''
+                    },
+					31: {
+                      id: 31,
+                      name: 'Dr. Ahmed Fouad',
+                      img:''
+                    },
+					32: {
+                      id: 32,
+                      name: 'Dr. Adel ElTobgi',
+                      img:''
+                    },
+					33: {
+                      id: 33,
+                      name: 'Dr. Mohamed ElSharkawi',
+                      img:''
+                    },
+					34: {
+                      id: 34,
+                      name: 'Dr. Hossam Refaat',
+                      img:''
+                    },
+					35: {
+                      id: 35,
+                      name: 'Dr. Benbilla Tawfik',
+                      img:''
+                    },
+					36: {
+                      id: 36,
+                      name: 'Dr. Mohamed Abd Allah',
+                      img:''
+                    },
+					37: {
+                      id: 37,
+                      name: 'Ahmed ElSayed',
+                      img:''
+                    },
+					38: {
+                      id: 38,
+                      name: 'Mai Abd Rabbuh',
+                      img:''
+                    },
+					39: {
+                      id: 39,
+                      name: 'Nora',
+                      img:''
+                    },
+					40: {
+                      id: 40,
+                      name: 'Sara Ibrahim',
+                      img:''
+                    },
+					41: {
+                      id: 41,
+                      name: 'Samia',
+                      img:''
+                    },
+                    100: {
+                      id: 100, 
+                      name: '',
+                      img:''
+                    }
+                    };
+      var locations = {
+                      0: 'Auditorium 1',
+                      1: 'Hall 1',
+                      2: 'Hall 2',
+                      3: 'Hall 3',
+                      4: 'Lab 1',
+                      5: 'Lab 2',
+                      6: 'Lab 3', 
+                      7: 'Auditorium 2',
+                      8: 'Auditorium 3',
+                      9: 'Auditorium 4',
+                      10: 'Lab 4',
+					  11: 'Lab 5',
+					  12: 'Lab 6',
+					  13: 'Lab 7',
+					  14: 'Lab 8',
+					  15: 'Lab 9',
+                      100: ''
+                    };
+
+      function createCustomHTMLContent(profID, loc, start, end){
+        console.log(profs[profID]);
+        console.log(profs[profID].name);
+        return '<div style="padding:5px 5px 5px 5px;">' +
+               '<b style="font-size: 18px;">' + profs[profID].name + '</b><br/>' +
+               '<table class="tooltip_layout">' + '<tr>' +
+               '<td><p> Loc: </p></td>' +
+               '<td><b>' + locations[loc] + '</b></td>' + '</tr>' + '<tr>' +
+               '<td><p> Start: </p></td>' +
+               '<td><b>' + start + '</b></td>' + '</tr>' + '<tr>' +
+               '<td><p> End: </p></td>' +
+               '<td><b>' + end + '</b></td>' + '</tr>' + '</table>' + '</div>';
+      }
+    </script>
+  </head>
+  <body>
+    <h1 style="padding-top:25px; text-align:center; color:#613381;"> Third year schedule (IS)</h1>
+    <div id="buttons" style="height: 200px;">
+      <div id="sun" style="padding-top: 20px; padding-left:15px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white; "> <img src="./week/sunday.jpg" style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px; "> </div> 
+
+      <div id="mon" style="padding-top: 20px; padding-left:20px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white;"> <img src="./week/monday.jpg"  style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px;">  </div> 
+
+      <div id="tue" style="padding-top: 20px; padding-left:20px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white;"> <img src="./week/tuesday.jpg"  style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px;">  </div> 
+
+      <div id="wed" style="padding-top: 20px; padding-left:20px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white;"> <img src="./week/wednesday.jpg"  style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px;">  </div> 
+
+      <div id="thu" style="padding-top: 20px; padding-left:20px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white;"> <img src="./week/thursday.jpg"  style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px;">  </div> 
+    </div>
+
+    <div id = "timeline" style="height: 880px; width:95%; padding-left:20px; "> <h1 style="padding-top:25px; text-align:center;"> Click on a day to show schedule! </h1> </div> 
+  </body>
+</html>

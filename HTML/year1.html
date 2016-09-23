@@ -1,0 +1,500 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+         // ======================================== Sunday Schedule ==================================================
+        var bsun = document.getElementById('sun');
+         bsun.onclick = function(){
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+         this.style.background = '#9e379f'; 
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'Computer Programming', createCustomHTMLContent(1, 0, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '2', 'Computer Programming', createCustomHTMLContent(1, 0, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '3', 'Computer Programming', createCustomHTMLContent(1, 0, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '4', 'Computer Programming', createCustomHTMLContent(1, 0, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '5', 'Introduction to Computer Science', createCustomHTMLContent(5, 5, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '6', 'Introduction to Information Systems', createCustomHTMLContent(4, 4, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '7', 'Discrete Mathematics', createCustomHTMLContent(9, 1, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '8', 'Discrete Mathematics', createCustomHTMLContent(9, 1, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            
+
+            [ '1', 'Calculus: Differentiation and Integration', createCustomHTMLContent(3, 1, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '2', 'Calculus: Differentiation and Integration', createCustomHTMLContent(3, 1, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '3', 'Introduction to Information Systems', createCustomHTMLContent(4, 4, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '4', 'Introduction to Computer Science', createCustomHTMLContent(5, 5, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '5', 'Discrete Mathematics', createCustomHTMLContent(5, 0, '11:00', '2:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '6', 'Discrete Mathematics', createCustomHTMLContent(5, 0, '11:00', '2:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '7', 'Discrete Mathematics', createCustomHTMLContent(10, 0, '11:00', '2:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '8', 'Discrete Mathematics', createCustomHTMLContent(10, 0, '11:00', '2:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            
+
+            [ '1', 'Discrete Mathematics (H3)', createCustomHTMLContent(6, 3, '1:00', '2:30') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 14, 30 ) ],
+            [ '2', 'Discrete Mathematics (H3)', createCustomHTMLContent(6, 3, '1:00', '2:30') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 14, 30 ) ],
+            [ '3', 'Discrete Mathematics (H1)', createCustomHTMLContent(7, 1, '1:00', '2:30') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 14, 30 ) ],
+            [ '4', 'Discrete Mathematics (H1)', createCustomHTMLContent(7, 1, '1:00', '2:30') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 14, 30 ) ],
+            [ '5', 'Discrete Mathematics (H3)', createCustomHTMLContent(6, 3, '2:30', '4:00') , new Date(2016, 3, 30, 14, 30), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '6', 'Discrete Mathematics (H3)', createCustomHTMLContent(6, 3, '2:30', '4:00') , new Date(2016, 3, 30, 14, 30), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '7', 'Introduction to Computer Science', createCustomHTMLContent(11, 6, '4:00', '6:00') , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 00 ) ],
+            [ '8', 'Introduction to Computer Science', createCustomHTMLContent(11, 6, '2:00', '4:00') , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+
+
+
+            [ '1', 'Introduction to Information Systems', createCustomHTMLContent(8, 0, '2:30', '4:30') , new Date(2016, 3, 30, 14, 30), new Date(2016, 3, 30, 16, 30 ) ],
+            [ '2', 'Introduction to Information Systems', createCustomHTMLContent(8, 0, '2:30', '4:30') , new Date(2016, 3, 30, 14, 30), new Date(2016, 3, 30, 16, 30 ) ],
+            [ '3', 'Introduction to Information Systems', createCustomHTMLContent(8, 0, '2:30', '4:30') , new Date(2016, 3, 30, 14, 30), new Date(2016, 3, 30, 16, 30 ) ],
+            [ '4', 'Introduction to Information Systems', createCustomHTMLContent(8, 0, '2:30', '4:30') , new Date(2016, 3, 30, 14, 30), new Date(2016, 3, 30, 16, 30 ) ],
+            
+
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+        // ======================================== Monday Schedule ==================================================
+        var bmon = document.getElementById('mon');
+         bmon.onclick = function(){
+        var ds= document.getElementsByTagName('div');
+        for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+         this.style.background = '  #9e379f'; 
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'Introduction to Information Systems', createCustomHTMLContent(4, 4, '9:30', '12:00' ) , new Date(2016, 3, 30, 10, 00), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '2', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '3', 'Introduction to Computer Science', createCustomHTMLContent(5, 5, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '4', 'Computer Programming', createCustomHTMLContent(12, 6, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '5', 'Calculus: Differentiation and Integration', createCustomHTMLContent(2, 0, '9:00', '12:00') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '6', 'Calculus: Differentiation and Integration', createCustomHTMLContent(2, 0, '9:00', '12:00') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '7', 'Calculus: Differentiation and Integration', createCustomHTMLContent(2, 0, '9:00', '12:00') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '8', 'Calculus: Differentiation and Integration', createCustomHTMLContent(2, 0, '9:00', '12:00') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            
+
+            [ '1', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '3', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '4', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '5', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '6', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '7', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '8', 'Activities', createCustomHTMLContent(100, 100, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            
+             [ '1', 'Human Rights', createCustomHTMLContent(13, 7, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+             [ '2', 'Human Rights', createCustomHTMLContent(13, 7, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+             [ '3', 'Human Rights', createCustomHTMLContent(13, 7, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+             [ '4', 'Human Rights', createCustomHTMLContent(13, 7, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '5', 'Computer Programming', createCustomHTMLContent(1, 0, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '6', 'Computer Programming', createCustomHTMLContent(1, 0, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '7', 'Computer Programming', createCustomHTMLContent(1, 0, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '8', 'Computer Programming', createCustomHTMLContent(1, 0, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            
+            [ '5', 'Introduction to Environmental Sciences', createCustomHTMLContent(14, 7, '4:00', '6:00' ) , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 0 ) ],
+            [ '6', 'Introduction to Environmental Sciences', createCustomHTMLContent(14, 7, '4:00', '6:00' ) , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 0 ) ],
+            [ '7', 'Introduction to Environmental Sciences', createCustomHTMLContent(14, 7, '4:00', '6:00' ) , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 0 ) ],
+            [ '8', 'Introduction to Environmental Sciences', createCustomHTMLContent(14, 7, '4:00', '6:00' ) , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 0 ) ],
+            
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+         // ======================================== Tuesday Schedule ==================================================
+
+      var btue = document.getElementById('tue');
+         btue.onclick = function(){
+
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+          this.style.background = '#9e379f'; 
+        
+      
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'Calculus: Differentiation and Integration', createCustomHTMLContent(3, 1, '9:00', '11:00') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '2', 'Calculus: Differentiation and Integration', createCustomHTMLContent(3, 1, '9:00', '11:00') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '3', 'Introduction to Computer Science', createCustomHTMLContent(5, 5, '9:00', '11:00') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '4', 'Introduction to Information Systems (L1)', createCustomHTMLContent(4, 4, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 00), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '5', 'Introduction to Information Systems', createCustomHTMLContent(8, 0, '9:00', '11:0') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 0 ) ],
+            [ '6', 'Introduction to Information Systems', createCustomHTMLContent(8, 0, '9:00', '11:0') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 0 ) ],
+            [ '7', 'Introduction to Information Systems', createCustomHTMLContent(8, 0, '9:00', '11:0') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 0 ) ],
+            [ '8', 'Introduction to Information Systems', createCustomHTMLContent(8, 0, '9:00', '11:0') , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 0 ) ],
+            
+            
+            [ '1', 'Discrete Mathematics', createCustomHTMLContent(5, 0, '11:00', '2:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '2', 'Discrete Mathematics', createCustomHTMLContent(5, 0, '11:00', '2:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '3', 'Discrete Mathematics', createCustomHTMLContent(5, 0, '11:00', '2:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '4', 'Discrete Mathematics', createCustomHTMLContent(5, 0, '11:00', '2:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '5', 'Computer Programming', createCustomHTMLContent(16, 2, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '6', 'Introduction to Computer Science', createCustomHTMLContent(0, 4, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '7', 'Calculus: Differentiation and Integration', createCustomHTMLContent(3, 1, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            [ '8', 'Calculus: Differentiation and Integration', createCustomHTMLContent(3, 1, '11:00', '1:00') , new Date(2016, 3, 30, 11, 0), new Date(2016, 3, 30, 13, 00 ) ],
+            
+            
+            
+            [ '1', 'Introduction to Computer Science', createCustomHTMLContent(15, 0, '2:00', '5:00') , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '2', 'Introduction to Computer Science', createCustomHTMLContent(15, 0, '2:00', '5:00') , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '3', 'Introduction to Computer Science', createCustomHTMLContent(15, 0, '2:00', '5:00') , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '4', 'Introduction to Computer Science', createCustomHTMLContent(15, 0, '2:00', '5:00') , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '5', 'Calculus: Differentiation and Integration', createCustomHTMLContent(17, 1, '1:00', '3:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 15, 00 ) ],
+            [ '6', 'Calculus: Differentiation and Integration', createCustomHTMLContent(17, 1, '1:00', '3:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 15, 00 ) ],
+            [ '7', 'Computer Programming', createCustomHTMLContent(16, 5, '1:00', '3:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 15, 00 ) ],
+            [ '8', 'Computer Programming', createCustomHTMLContent(12, 4, '1:00', '3:00') , new Date(2016, 3, 30, 13, 0), new Date(2016, 3, 30, 15, 00 ) ],
+
+            [ '8', 'Introduction to Computer Science', createCustomHTMLContent(11, 4, '3:00', '5:00') , new Date(2016, 3, 30, 15, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            
+            
+
+
+
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+
+         // ======================================== Wednesday Schedule ==================================================
+         var bwed = document.getElementById('wed');
+         bwed.onclick = function(){
+
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+          this.style.background = '#9e379f'; 
+        
+      
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'Calculus: Differentiation and Integration', createCustomHTMLContent(2, 0, '9:00', '12:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '2', 'Calculus: Differentiation and Integration', createCustomHTMLContent(2, 0, '9:00', '12:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '3', 'Calculus: Differentiation and Integration', createCustomHTMLContent(2, 0, '9:00', '12:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '4', 'Calculus: Differentiation and Integration', createCustomHTMLContent(2, 0, '9:00', '12:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '5', 'Introduction to Computer Science', createCustomHTMLContent(5, 5, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '6', 'Computer Programming', createCustomHTMLContent(12, 4, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '7', 'Calculus: Differentiation and Integration', createCustomHTMLContent(3, 1, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            [ '8', 'Calculus: Differentiation and Integration', createCustomHTMLContent(3, 1, '10:00', '12:00' ) , new Date(2016, 3, 30, 10, 0), new Date(2016, 3, 30, 12, 00 ) ],
+            
+            [ '1', 'Introduction to Computer Science', createCustomHTMLContent(18, 1, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '2', 'Introduction to Information Systems', createCustomHTMLContent(19, 5, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '3', 'Computer Programming', createCustomHTMLContent(12, 4, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '4', 'Introduction to Computer Science', createCustomHTMLContent(20, 6, '12:00', '2:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 14, 00 ) ],
+            [ '5', 'Introduction to Computer Science', createCustomHTMLContent(12, 4, '12:00', '3:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 15, 00 ) ],
+            [ '6', 'Introduction to Computer Science', createCustomHTMLContent(12, 4, '12:00', '3:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 15, 00 ) ],
+            [ '7', 'Introduction to Computer Science', createCustomHTMLContent(12, 4, '12:00', '3:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 15, 00 ) ],
+            [ '8', 'Introduction to Computer Science', createCustomHTMLContent(12, 4, '12:00', '3:00' ) , new Date(2016, 3, 30, 12, 0), new Date(2016, 3, 30, 15, 00 ) ],
+            
+            
+            [ '2', 'Introduction to Computer Science', createCustomHTMLContent(11, 4, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '3', 'Calculus: Differentiation and Integration', createCustomHTMLContent(21, 1, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '4', 'Calculus: Differentiation and Integration', createCustomHTMLContent(21, 1, '2:00', '4:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 16, 00 ) ],
+            [ '5', 'Human Rights', createCustomHTMLContent(13, 0, '3:00', '5:00' ) , new Date(2016, 3, 30, 15, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '6', 'Human Rights', createCustomHTMLContent(13, 0, '3:00', '5:00' ) , new Date(2016, 3, 30, 15, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '7', 'Human Rights', createCustomHTMLContent(13, 0, '3:00', '5:00' ) , new Date(2016, 3, 30, 15, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            [ '8', 'Human Rights', createCustomHTMLContent(13, 0, '3:00', '5:00' ) , new Date(2016, 3, 30, 15, 0), new Date(2016, 3, 30, 17, 00 ) ],
+
+            [ '1', 'Introduction to Environmental Science', createCustomHTMLContent(14, 7, '4:00', '6:00' ) , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 00 ) ],
+            [ '2', 'Introduction to Environmental Science', createCustomHTMLContent(14, 7, '4:00', '6:00' ) , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 00 ) ],
+            [ '3', 'Introduction to Environmental Science', createCustomHTMLContent(14, 7, '4:00', '6:00' ) , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 00 ) ],
+            [ '4', 'Introduction to Environmental Science', createCustomHTMLContent(14, 7, '4:00', '6:00' ) , new Date(2016, 3, 30, 16, 0), new Date(2016, 3, 30, 18, 00 ) ],
+            
+            
+            
+            
+            
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+
+
+          // ======================================== Thursday Schedule ==================================================
+          var bthu = document.getElementById('thu');
+         bthu.onclick = function(){
+
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+          this.style.background = '#9e379f'; 
+        
+      
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'Discrete Mathematics', createCustomHTMLContent(6, 8, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '2', 'Discrete Mathematics', createCustomHTMLContent(6, 8, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '3', 'Discrete Mathematics', createCustomHTMLContent(7, 0, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '4', 'Discrete Mathematics', createCustomHTMLContent(7, 0, '9:00', '10:30' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 10, 30 ) ],
+            [ '5', 'Calculus: Differentiation and Integration', createCustomHTMLContent(17, 9, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '6', 'Calculus: Differentiation and Integration', createCustomHTMLContent(17, 9, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '7', 'Introduction to Information Systems', createCustomHTMLContent(19, 5, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            [ '8', 'Introduction to Information Systems', createCustomHTMLContent(4, 4, '9:00', '11:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 11, 00 ) ],
+            
+            [ '1', 'Introduction to Computer Science', createCustomHTMLContent(18, 2, '10:30', '12:30' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '2', 'Computer Programming', createCustomHTMLContent(12, 6, '10:30', '12:30' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '3', 'Calculus: Differentiation and Integration', createCustomHTMLContent(21, 0, '10:30', '12:30' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '4', 'Calculus: Differentiation and Integration', createCustomHTMLContent(21, 0, '10:30', '12:30' ) , new Date(2016, 3, 30, 10, 30), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '5', 'Discrete Mathematics', createCustomHTMLContent(6, 8, '11:00', '12:30' ) , new Date(2016, 3, 30, 11, 00), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '6', 'Discrete Mathematics', createCustomHTMLContent(6, 8, '11:00', '12:30' ) , new Date(2016, 3, 30, 11, 00), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '7', 'Discrete Mathematics', createCustomHTMLContent(9, 9, '11:00', '12:30' ) , new Date(2016, 3, 30, 11, 00), new Date(2016, 3, 30, 12, 30 ) ],
+            [ '8', 'Discrete Mathematics', createCustomHTMLContent(9, 9, '11:00', '12:30' ) , new Date(2016, 3, 30, 11, 00), new Date(2016, 3, 30, 12, 30 ) ],
+            
+            [ '1', 'Computer Programming', createCustomHTMLContent(12, 6, '12:30', '2:30' ) , new Date(2016, 3, 30, 12, 30), new Date(2016, 3, 30, 14, 30 ) ],
+            [ '2', 'Introduction to Computer Science', createCustomHTMLContent(18, 2, '12:30', '2:30' ) , new Date(2016, 3, 30, 12, 30), new Date(2016, 3, 30, 14, 30 ) ],
+            [ '5', 'Introduction to Information Systems', createCustomHTMLContent(19, 4, '12:30', '2:30' ) , new Date(2016, 3, 30, 12, 30), new Date(2016, 3, 30, 14, 30 ) ],
+            [ '6', 'Introduction to Computer Science', createCustomHTMLContent(0, 5, '12:30', '2:30' ) , new Date(2016, 3, 30, 12, 30), new Date(2016, 3, 30, 14, 30 ) ],
+            [ '7', 'Introduction to Computer Science', createCustomHTMLContent(11, 1, '12:30', '2:30' ) , new Date(2016, 3, 30, 12, 30), new Date(2016, 3, 30, 14, 30 ) ],
+            
+
+
+            
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
+
+
+      }
+      var profs = {
+                    0: {
+                      id: 0, 
+                      name: 'Dr. Mai Elshehaly',
+                      img: ''
+                      },
+                    1: {
+                      id: 1, 
+                      name: 'Dr. Mahmoud Elgayar',
+                      img: ''
+                      },
+                    2: {
+                      id: 2, 
+                      name: 'Dr. Sayed Abdel Raouf',
+                      img: ''
+                      },
+                    3: {
+                      id: 3, 
+                      name: 'Heba Arafat + Asmaa Mohamed',
+                      img: ''
+                      },
+                    4: {
+                      id: 4, 
+                      name: 'Heba Mostafa',
+                      img: ''
+                      },
+                    5: {
+                      id: 5, 
+                      name: 'Fatma Khairy', 
+                      img: ''
+                      },
+                    6: {
+                      id: 6, 
+                      name: 'Mohamed Gaber',
+                      img: ''
+                      },
+                    7: {
+                      id: 7, 
+                      name: 'Heba Arafat', 
+                      img: ''
+                      },
+                    8: {
+                      id: 8, 
+                      name: 'Dr. Hoda Hafez',
+                      img: ''
+                      },
+                    9: {
+                      id: 9, 
+                      name: 'Samia Mahmoud',
+                      img: ''
+                    }, 
+                    10: {
+                      id: 10, 
+                      name: 'Dr. Yasser Abdel Sattar',
+                      img: ''
+                    }, 
+                    11: {
+                      id: 11, 
+                      name: 'Osama Helmy',
+                      img: ''
+                    },
+                    12: {
+                      id: 12,
+                      name: 'Amira Sayed',
+                      img:'' 
+                    },
+                    13: {
+                      id: 13, 
+                      name: 'Dr. Abdel Raouf Abdel Rahman',
+                      img: ''
+                    },
+                    14: {
+                      id: 14, 
+                      name: 'Dr. Mohamed Abdel Naeem',
+                      img: ''
+                    },
+                    15: {
+                      id: 15,
+                      name: 'Dr. Mohamed Moselhy',
+                      img:''
+                    },
+                    16: {
+                      id: 16,
+                      name: 'Marwa Fekry',
+                      img: ''
+                      },
+                    17: {
+                      id: 17, 
+                      name: 'Doaa Abdel Shafy',
+                      img: ''
+                      },
+                    18: {
+                      id: 18,
+                      name: 'Gehad Taher',
+                      img: ''
+                      },
+                    19: {
+                      id: 19,
+                      name: 'Samiha',
+                      img:''
+                      },
+                    20: {
+                      id: 20, 
+                      name: 'Esraa Ismail',
+                      img: ''
+                      },
+                    21: {
+                      id: 21,
+                      name: 'Ahmed Galal',
+                      img:''
+                    },
+                    22: {
+                      id: 22,
+                      name: 'X',
+                      img:''
+                    },
+                    100: {
+                      id: 100, 
+                      name: '',
+                      img:''
+                    }
+                    };
+      var locations = {
+                      0: 'Auditorium 1',
+                      1: 'Hall 1',
+                      2: 'Hall 2',
+                      3: 'Hall 3',
+                      4: 'Lab 1',
+                      5: 'Lab 2',
+                      6: 'Lab 3', 
+                      7: 'Auditorium 2',
+                      8: 'Auditorium 3',
+                      9: 'Auditorium 4',
+                      10: 'X',
+                      100: ''
+                    };
+
+      function createCustomHTMLContent(profID, loc, start, end){
+        console.log(profs[profID]);
+        console.log(profs[profID].name);
+        return '<div style="padding:5px 5px 5px 5px;">' +
+               '<b style="font-size: 18px;">' + profs[profID].name + '</b><br/>' +
+               '<table class="tooltip_layout">' + '<tr>' +
+               '<td><p> Loc: </p></td>' +
+               '<td><b>' + locations[loc] + '</b></td>' + '</tr>' + '<tr>' +
+               '<td><p> Start: </p></td>' +
+               '<td><b>' + start + '</b></td>' + '</tr>' + '<tr>' +
+               '<td><p> End: </p></td>' +
+               '<td><b>' + end + '</b></td>' + '</tr>' + '</table>' + '</div>';
+      }
+    </script>
+  </head>
+  <body>
+    <h1 style="padding-top:25px; text-align:center; color:#613381;"> First year schedule </h1>
+    <div id="buttons" style="height: 200px;">
+      <div id="sun" style="padding-top: 20px; padding-left:15px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white; "> <img src="./week/sunday.jpg" style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px; "> </div> 
+
+      <div id="mon" style="padding-top: 20px; padding-left:20px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white;"> <img src="./week/monday.jpg"  style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px;">  </div> 
+
+      <div id="tue" style="padding-top: 20px; padding-left:20px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white;"> <img src="./week/tuesday.jpg"  style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px;">  </div> 
+
+      <div id="wed" style="padding-top: 20px; padding-left:20px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white;"> <img src="./week/wednesday.jpg"  style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px;">  </div> 
+
+      <div id="thu" style="padding-top: 20px; padding-left:20px; width: 18%; height:100px; display: inline-block; *display:inline; zoom:1; vertical-align: top; background:white;"> <img src="./week/thursday.jpg"  style="height:65px; max-height: 100%; max-width: 90%; padding-top:10px; padding-left:10px;">  </div> 
+    </div>
+
+    <div id = "timeline" style="height: 880px; width:95%; padding-left:20px; "> <h1 style="padding-top:25px; text-align:center;"> Click on a day to show schedule! </h1> </div> 
+  </body>
+</html>
