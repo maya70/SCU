@@ -185,7 +185,8 @@
 			
 			[ '1', 'Xml Databases', createCustomHTMLContent(6, 3, '12:30', '2:00' ) , new Date(2016, 3, 30, 12, 30), new Date(2016, 3, 30, 14,00 ) ],
             [ '1', 'Data Mining', createCustomHTMLContent(1, 0, '2:00', '5:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
-			 [ '1', 'Data Mining', createCustomHTMLContent(1, 0, '2:00', '5:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+			[ '2', 'Data Mining', createCustomHTMLContent(1, 0, '2:00', '5:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
+			[ '3', 'Data Mining', createCustomHTMLContent(1, 0, '2:00', '5:00' ) , new Date(2016, 3, 30, 14, 0), new Date(2016, 3, 30, 17, 00 ) ],
             
             
             
@@ -199,7 +200,42 @@
         };
 
 
+ // ======================================== Thursday Schedule ==================================================
+          var bthu = document.getElementById('thu');
+         bthu.onclick = function(){
 
+          var ds= document.getElementsByTagName('div');
+          for(i=0; i< ds.length; i++)
+              { ds[i].style.background = 'white'; }
+             // ds.forEach(function(d){ d.style.background = 'blue'; });
+          this.style.background = '#9e379f'; 
+        
+      
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'seq'});
+        dataTable.addColumn({ type: 'string', id: 'name' });
+        dataTable.addColumn({ type: 'string', role: 'tooltip', p : {'html': true} });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        //for (i=0; i < 3; i++)
+        //{
+          dataTable.addRows([
+            [ '1', 'Graduation Projects', createCustomHTMLContent(10, 100, '9:00', '5:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 17, 00 ) ],
+			[ '2', 'Graduation Projects', createCustomHTMLContent(10, 100, '9:00', '5:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 17, 00 ) ],
+			[ '3', 'Graduation Projects', createCustomHTMLContent(10, 100, '9:00', '5:00' ) , new Date(2016, 3, 30, 9, 0), new Date(2016, 3, 30, 17, 00 ) ],
+            
+
+            
+            ]);
+        //}
+        var options = {tooltip: {isHtml: true},
+                        legend: 'none'
+                      };
+        chart.draw(dataTable);
+        };
          
 
 
@@ -254,7 +290,18 @@
                       id: 9, 
                       name: 'Ahmed ElSayed',
                       img: ''
+                    } ,
+					10: {
+                      id: 10, 
+                      name: '',
+                      img: ''
+                    } ,
+					100: {
+                      id: 100, 
+                      name: '',
+                      img: ''
                     } 
+					
                     
                     };
       var locations = {
